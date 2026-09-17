@@ -50,3 +50,5 @@ while True:
         buscar()
     else:
         print("Opção inválida.")
+
+"""comentario"""
