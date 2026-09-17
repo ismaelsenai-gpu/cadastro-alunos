@@ -10,9 +10,15 @@ def cadastrar():
             return
     alunos.append(nome)
     print("Aluno cadastrado.")
+
 def listar():
-    for aluno in alunos:
-        print(aluno)
+    if len(alunos) == 0:
+        return print("Nenhum aluno cadastrado.")
+    
+    print("\n--- ALUNOS ---")
+    for numero, aluno in enumerate(alunos, start=1):
+        print(f"{numero}. {aluno}")
+    print(f"Total: {len(alunos)} aluno(s)")
 while True:
     print("\n--- CADASTRO DE ALUNOS ---")
     print("1 - Cadastrar")
