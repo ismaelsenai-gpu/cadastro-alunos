@@ -29,8 +29,22 @@ def buscar():
     for aluno in alunos:
         if aluno.lower() == termo.lower():
             print(f"Encontrado: {aluno}")
-        return
+            return
     print("Aluno não encontrado.")
+
+def excluir():
+    termo = input("Nome completo para excluir: ").strip()
+    if termo == "":
+        print("Digite um nome para excluir.")
+        return
+    for aluno in alunos:
+        if aluno.lower() == termo.lower():
+            alunos.remove(aluno)
+            print(f"Aluno {aluno} excluído.")
+            return
+    print("Aluno não encontrado.")
+
+
 while True:
     print("\n--- CADASTRO DE ALUNOS ---")
     print("1 - Cadastrar")
@@ -48,5 +62,9 @@ while True:
 
     elif opcao == "3":
         buscar()
+
+    elif opcao == "4":
+        excluir()
     else:
         print("Opção inválida.")
+
